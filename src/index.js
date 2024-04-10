@@ -1,0 +1,6 @@
+export {default as Layout} from "./components/rootLayout/Layout"
+export {default as Home} from "./pages/Home"
+export {default as QuizPage} from "./pages/QuizPage"
+export {default as ResultPage} from "./pages/ResultPage"
+export {default as CreatePage} from "./pages/CreatePage"
+export {default as AllQuestions} from "./pages/AllQuestions"

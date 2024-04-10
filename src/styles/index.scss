@@ -1,0 +1,51 @@
+@import "./base";
+@import "./typo";
+
+.cc-container {
+  width: 100% !important;
+  max-width: 1440px !important;
+  margin: 0 auto;
+}
+
+.page-alignment {
+  padding: 0 1.25rem;
+
+  @media (min-width: 568px) {
+    padding: 0 2.1875rem;
+  }
+
+  @media (min-width: 768px) {
+    padding: 0 3.125rem;
+  }
+
+  @media (min-width: 992px) {
+    padding: 0 4.7rem;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 0 6.25rem !important;
+  }
+}
+
+.active:active {
+  transform: scale(0.97);
+}
+
+.resultPage-button-container {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @media (min-width: 413px) {
+    justify-content: space-between;
+    gap: 0px;
+  }
+}
+
+.resultPage-button {
+  width: 45%;
+
+  @media (min-width: 413px) {
+    width: 32%;
+  }
+}
