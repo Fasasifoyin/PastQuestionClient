@@ -7,6 +7,8 @@ const QuizLayout = ({
   length,
   currentQuestion,
   setCurrentQuestion,
+  array,
+  array2
 }) => {
   return (
     <Flex minH={"calc(100vh - 70px)"} mt={"70px"} pb={{ base: "20px", xl: 0 }}>
@@ -53,6 +55,8 @@ const QuizLayout = ({
                 totalQuestions={length}
                 currentQuestion={currentQuestion}
                 setCurrentQuestion={setCurrentQuestion}
+                array={array}
+                array2={array2}
               />
             </Box>
           </Box>

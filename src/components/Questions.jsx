@@ -30,8 +30,9 @@ const Questions = ({ questionNumber, setQuestionNumber, quizData }) => {
     const option = quizData[questionNumber].options.find(
       (each) => each.option === value
     );
+    const index = questionNumber;
 
-    const newObject = { id, option };
+    const newObject = { id, option, index };
     dispatch(addOrUpdateAnsweredObject(newObject));
   };
 

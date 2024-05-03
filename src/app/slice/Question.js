@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createQuestion, getQuestions } from "../actions/Question";
+import { createQuestion, editQuestion, getQuestions } from "../actions/Question";
 
 const initialState = {
   questions: [],
@@ -41,6 +41,15 @@ const questionSlice = createSlice({
       state.status = "success";
     });
     builder.addCase(createQuestion.rejected, (state) => {
+      state.status = "failed";
+    });
+    builder.addCase(editQuestion.pending, (state) => {
+      state.status = "pending";
+    });
+    builder.addCase(editQuestion.fulfilled, (state) => {
+      state.status = "success";
+    });
+    builder.addCase(editQuestion.rejected, (state) => {
       state.status = "failed";
     });
   },

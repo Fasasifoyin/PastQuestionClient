@@ -12,7 +12,7 @@ export const homeSchema = yup.object().shape({
   topic: yup.string().required("Select topic"),
 });
 
-export const createPageSchema = yup.object().shape({
+export const createEditSchema = yup.object().shape({
   question: yup.object().shape({
     question: yup.string().required("Enter question"),
   }),

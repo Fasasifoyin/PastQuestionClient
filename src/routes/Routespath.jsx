@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import {
   AllQuestions,
   CreatePage,
+  Edit,
   Home,
   Layout,
   QuizPage,
@@ -58,6 +59,14 @@ const routes = [
         element: (
           <PrivateRoute>
             <AllQuestions />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/edit/:id",
+        element: (
+          <PrivateRoute>
+            <Edit />
           </PrivateRoute>
         ),
       },

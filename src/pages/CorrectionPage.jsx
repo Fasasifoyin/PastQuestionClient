@@ -17,11 +17,11 @@ import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { useSelector } from "react-redux";
 import { Question } from "../app/slice/Question";
 import { AnsweredQuestions } from "../app/slice/frontend";
+import { getIndexesOfDifference } from "../utils/Functions";
 
 const CorrectionPage = () => {
   const data = useSelector(Question);
   const answeredQuestions = useSelector(AnsweredQuestions);
-
   const [questionNumber, setQuestionNumber] = useState(0);
 
   const currentQuestionViewed = answeredQuestions.find(
@@ -36,6 +36,12 @@ const CorrectionPage = () => {
     setQuestionNumber((prev) => prev - 1);
   };
 
+  const findWrongs = answeredQuestions
+    .map((each) => (!each.option.isCorrect ? each.index + 1 : -1))
+    .filter((index) => index !== -1);
+
+  const unanswered = getIndexesOfDifference(data, answeredQuestions);
+
   return (
     <Box position={"relative"}>
       <Nav />
@@ -43,6 +49,8 @@ const CorrectionPage = () => {
         length={data.length}
         currentQuestion={questionNumber}
         setCurrentQuestion={setQuestionNumber}
+        array={findWrongs}
+        array2={unanswered}
       >
         <Box>
           <Box mb={"25px"}>

@@ -32,6 +32,8 @@ const QuizPage = () => {
         length={data.length}
         currentQuestion={questionNumber}
         setCurrentQuestion={setQuestionNumber}
+        array={[]}
+        array2={[]}
       >
         <Questions
           questionNumber={questionNumber}
